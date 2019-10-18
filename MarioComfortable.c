@@ -3,9 +3,17 @@
 int main()
 {
   int height;
-  printf ("Height: ");
-  scanf("%d\n", &height);
-  // asks user to enter Height
+  
+  do
+  {
+    //input loop with validation
+    printf ("Height: ");
+    scanf("%d", &height);
+    // flush input buffer
+    while((c = getchar()) != '\n' && c != EOF);
+  }
+  while(height>23 || height<=0);
+  
   for (int i = 0; i < height; i++)
   // base for loop to keep track of which line is being printed
   {
