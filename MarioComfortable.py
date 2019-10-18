@@ -5,24 +5,14 @@ lefthashes = 0
 rightspaces = height
 righthashes = 0
 x = ' '
-while (counter <= height):
-    while (leftspaces > counter):
-        print(x, end="")
-        leftspaces-=1
-    while (lefthashes < counter):
-        print("#", end="")
-        lefthashes+=1
-    print (x, end="")
-    while (righthashes < counter):
-        print("#", end="")
-        righthashes+=1
-    while (rightspaces > counter):
-        print(x, end="")
-        rightspaces-=1
-    print("\n")
-    leftspaces = height
-    lefthashes = 0
-    rightspaces = height
-    righthashes = 0
-    counter += 1
-
+height = int(input("Height: "))
+counter = 0
+leftspaces = height
+rightspaces = height
+for counter in range(1, height+1):
+    print(' '*(leftspaces-counter), end='')
+    print('#'*(counter),end='')
+    print(' ', end='')
+    print('#'*(counter), end='')
+    print(' '*(rightspaces-counter), end='')
+    print()
